@@ -6,10 +6,11 @@ body {
 
 ul {
     display: flex;
-    justify-content: space-between;
     list-style-type: none;
-    align-items: center;
-    padding: 16px;
+    text-align: left;
+    margin-left: 150px; /* Reduzi a margem esquerda */
+    padding: 10px; /* Reduzi o padding */
+    gap: 90px; /* Reduzi o gap para 20 pixels */
 }
 
 a {
@@ -17,45 +18,102 @@ a {
     text-decoration: none;
 }
 
-header img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid white;
-}
+/*Canto superior*/
+/*-------------------------------------------------------*/
 
 .center {
-    text-align: center;
+  position: relative;
 }
 
-h1 {
-    color: blue;
+.center img {
+  display: block;         /* remove espaços indesejados */
+  width: 100vw;           /* ocupa toda a largura da viewport */
+  height: auto;           /* mantém proporção */
+  margin: 0;              /* sem margens */
+  padding: 0;             /* sem padding */
+  position: relative;     /* ou remova se não precisar */
 }
 
-footer img{
-    width: 40px;
-    height: 40px;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*Imagem tocae os dois canto esquerdo e direito*/
+/*-------------------------------------------------------*/
+
+.title {
+  position: absolute;
+  top: 200px;          /* distância do topo da imagem */
+  left: 100px;         /* distância da esquerda */
+  color: white;
+  font-size: 30px;
 
 }
+
+.texto{
+  position: absolute;
+  top: 220px;          /* distância do topo da imagem */
+  left: 100px;         /* distância da esquerda */
+  color: white;
+  font-size: 20px;
+  max-width: 700px; /*Define a largura máxima do elemento*/
+  margin: 30px auto;
+  text-align: justify;
+}
+
+
+/* Perfil */
+.perfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+  position: absolute;
+  top: 200px;          /* distância do topo da imagem */
+  left: 1100px;         /* distância da esquerda */
+}
+
+h2 {
+  position: absolute;
+  top: 345px;          /* distância do topo da imagem */
+  left: 1059px;
+  font-size: 20px;        /* distância da esquerda */
+  box-shadow: 0 0 2000px rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  padding: 5px 5px; /* igual para os dois lados */
+}
+
+
 
 footer {
-    display: flex;
-    justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: -62px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 1000; /* garante que fique por cima de outros elementos */
 }
 
 footer a {
-    margin: 20px;
-    text-align: center;
+  margin: 0 10px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+footer img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
 }
 
 footer p {
-    margin-top: 2px;
-}
-
-.container {
-    padding: 0px 50px;
-}
-
-nav a:hover{
-    color: blue;
+  margin-top: 2px;
+  font-size: 12px;
 }
