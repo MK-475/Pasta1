@@ -1,119 +1,193 @@
 body {
-    color: white;
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif
-}
-
-ul {
-    display: flex;
-    list-style-type: none;
-    text-align: left;
-    margin-left: 150px; /* Reduzi a margem esquerda */
-    padding: 10px; /* Reduzi o padding */
-    gap: 90px; /* Reduzi o gap para 20 pixels */
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-/*Canto superior*/
-/*-------------------------------------------------------*/
-
-.center {
-  position: relative;
-}
-
-.center img {
-  display: block;         /* remove espaços indesejados */
-  width: 100vw;           /* ocupa toda a largura da viewport */
-  height: auto;           /* mantém proporção */
-  margin: 0;              /* sem margens */
-  padding: 0;             /* sem padding */
-  position: relative;     /* ou remova se não precisar */
-}
-
-body {
   margin: 0;
   padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #000;
+  color: white;
+  overflow-x: hidden;
 }
 
-/*Imagem tocae os dois canto esquerdo e direito*/
-/*-------------------------------------------------------*/
 
+/* Navegação */
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: center;
+  padding: 10px 20px;
+  gap: 60px;
+  margin: 0;
+}
+
+
+/*---------------------------------------------------------------*/
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2vw; /* era 1.2rem – agora proporcional à largura da tela */
+}
+
+/* Canto superior com imagem */
+.center {
+  position: relative;
+  width: 100vw;
+  height: auto;
+}
+
+
+.center img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+}
+
+
+
+/*---------------------------------------------------------------*/
+/* Título */
 .title {
   position: absolute;
-  top: 200px;          /* distância do topo da imagem */
-  left: 100px;         /* distância da esquerda */
+  top: 20vh;
+  left: 8vw;
+  font-size: 3vw;
   color: white;
-  font-size: 30px;
-
+  max-width: 80vw;
+  line-height: 1.2;
 }
 
-.texto{
-  position: absolute;
-  top: 220px;          /* distância do topo da imagem */
-  left: 100px;         /* distância da esquerda */
-  color: white;
-  font-size: 20px;
-  max-width: 700px; /*Define a largura máxima do elemento*/
-  margin: 30px auto;
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .title {
+    position: absolute;
+    top: 34vw;
+  }
+}
+
+/*---------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------------*/
+
+/* Texto principal */
+.texto {
+  max-width: 550px;
+  padding: 10px;
+  margin: 10px auto;
   text-align: justify;
+  position: absolute;
+  top: calc(20vh + 5vw); /* abaixo do título */
+  left: 7vw;
+  color: white;
+  font-size: 1.2vw;
+  line-height: 2;
 }
 
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .texto {
+    position: absolute;        /* tira o position absolute */
+    max-width: 50%;          /* ocupa até 90% da largura da tela */
+    font-size: 1vw;          /* aumenta a fonte para legibilidade */
+    top: 24vh;
+  }
+}
 
-/* Perfil */
+/*---------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------------*/
+/* Imagem de perfil */
 .perfil {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid white;
+  max-width: 150px;
+  max-height: 150px;
   object-fit: cover;
   position: absolute;
-  top: 200px;          /* distância do topo da imagem */
-  left: 1100px;         /* distância da esquerda */
+  top: 22vh;
+  left: 75vw;
+  
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  border: 3px solid white;
+
 }
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .perfil {
+    position: absolute;
+    position: sticky;
+    width: 10vw;
+    height: 10vw;
+    top: 24vh;
+  }
+}
+/*---------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------*/
 
 h2 {
   position: absolute;
-  top: 345px;          /* distância do topo da imagem */
-  left: 1059px;
-  font-size: 20px;        /* distância da esquerda */
+  top: calc(15vh + 13vw); /* base no topo da foto + altura da foto + espaçamento */
+  left: 74vw;
+  transform: translateX(-5%); /* opcional: centraliza um pouco melhor */
+  font-size: 1.2vw;
   box-shadow: 0 0 2000px rgba(255, 255, 255, 0.6);
-  line-height: 1.6;
-  padding: 5px 5px; /* igual para os dois lados */
+  padding: 5px;
+  text-align: center;
 }
 
 
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  h2 {
+    position: absolute;
+    top: 45vw;
+  }
+}
+/*---------------------------------------------------------------*/
 
+
+
+/*---------------------------------------------------------------*/
+
+/* Rodapé com ícones */
 footer {
   position: fixed;
   bottom: 0;
-  left: -62px;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
-  z-index: 1000; /* garante que fique por cima de outros elementos */
+  padding: 1vh 0;
+  background: transparent;
+  z-index: 1000;
+  gap: 5vw;
 }
 
 footer a {
-  margin: 0 10px;
   text-align: center;
   color: white;
   text-decoration: none;
+  font-size: 1vw;
 }
 
 footer img {
-  width: 40px;
-  height: 40px;
+  width: 4vw;
+  max-width: 40px;
+  height: auto;
   display: block;
   margin: 0 auto;
 }
 
 footer p {
-  margin-top: 2px;
-  font-size: 12px;
+  margin-top: 0.3vh;
+  font-size: 0.8vw;
 }
